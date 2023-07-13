@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<div class="card">
+    <div class="card-header">
+      {{std_rec.std_name}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Unique ID: </strong>{{std_rec.std_id}}<br>
+      </p>
+      <p class="card-text">
+        <strong>Phone No: </strong>{{std_rec.std_Phone_no}}<br>
+      </p>
+      <p class="card-text">
+        <strong>Course: </strong>{{std_rec.std_course}}<br>
+      </p>
+      <p class="card-text">
+        <strong>Division: </strong>{{std_rec.std_class}}<br>
+      </p>
+      <p class="card-text">
+        <strong>ID: </strong>{{std_rec.id}}<br>
+      </p>
+    </div>
+</div>
+<br>
+<a class="btn btn-secondary" href="{% url 'home' %}" role="button">Back</a>
+<a class="btn btn-danger" href="{% url 'del_record' std_rec.id %}" role="button">Delete</a>
+<a class="btn btn-secondary" href="{% url 'update_record' std_rec.id %}" role="button">Update Record</a>
+
+{% endblock %}
